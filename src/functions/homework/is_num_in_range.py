@@ -6,9 +6,7 @@ def ran_check(num, low, high):
         print('The number is outside the range.')
     pass
 
-
 def ran_bool(num, low, high):
     return low <= num <= high
-
 
 assert ran_bool(5, 2, 7)

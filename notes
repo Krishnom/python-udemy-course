@@ -37,7 +37,7 @@ Useful Operators
     use int(), float(), str() etc.
 
 
-8. shorthands to append to a list
+8. shorthands to append to a list(list comprehension)
     tidy way
         mylist = []
         for letter in 'words':
@@ -99,3 +99,52 @@ convert list to string
 
 
 pylint --> tool for getting your code quality report
+
+
+--------------------------------------------------------------------------------------------
+Map/Reduce/Filter/Lambda
+---- Returns list of word length in phrase
+        phrase = 'How long are the words in this phrase'
+        list(map(len ,phrase.split()))
+---- Return number representation of list of digits
+        digits = [3,4,3,2,1]
+        reduce(lambda x,y: x*10 + y, digits)
+---- Return the words from a list of words which start with a target letter
+     words = ['hello','are','cat','dog','ham','hi','go','to','heart']
+     list(filter(lambda word: word[0] == letter, word_list))
+
+--------------------------------------------------------------------------------------------
+Advance number formats
+Integer to Hexadecimal
+    hex(int_num)
+Integer to Binary
+    bin(int_num)
+
+Round a decimal digit
+    round(5.2222) --> 5
+    round(5.51) --> 6
+
+
+--------------------------------------------------------------------------------------------
+Sets
+new_set = set()
+
+
+set1 = {1,2,3,4,5,6}
+set2 = {2,3,4,5,6}
+
+get element in set1 that are not in set2
+    set1.difference(set2)
+
+Find all elements that are in either set: (all items in one set that is not in another)
+    set1.difference(set2).union(set2.difference(set1))
+
+creating dictionary using dictionary comprehension
+set = {num: num**3 for num in range(5)}
+print(set)
+{0: 0, 1: 1, 2: 8, 3: 27, 4: 64}
+
+
+--------------------------------------------------------------------------------------------
+formatting integer to 14 digit by padding with 0s
+print("{:0>14}".format(int(get_bin(num))))      
